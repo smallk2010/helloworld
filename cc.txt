@@ -1,0 +1,172 @@
+﻿_Root 
+cn            存放中文HTML 文件 
+en            存放英文HTML 文件 
+flash         存放Flash 文件 
+img           存放图片文件 
+imagestudio   存放PSD 源文件 
+flashstudio   存放flash 源文件 
+inc           存放include 文件 
+library       存放DW 库文件 
+media         存放多媒体文件 
+project       存放工程项目资料 
+temp          存放客户原始资料 
+js            存放JavaScript 脚本 
+css           存放CSS 文件
+/**************************************************/
+变量(驼峰式)
+静态：首字母小写UserId
+共有：首字母小写userId
+私有：_首字母小写_userId
+局部：_首字母小写_userId
+常量：全大写USER_ID
+
+public var userName = “cc”；
+private var _user = “cc”;
+public const MAX_COUNT = 99;
+function getUser(_user)
+{
+    var _userName = “kk”; 
+    return _user;
+}
+/**************************************************/
+fs14：字体大小14号
+fb：字体加粗
+fc：字体颜色
+mt：margin-top
+mb：margin-bottom
+ml：margin-left
+mr：margin-right
+p：padding
+pt：padding-top
+pb：padding-bottom
+pl：padding-left
+pr：padding-right
+tac：text-align: center;
+vam：vertical-align: middle;
+posr：position: relative;
+posa：position: absolute;
+fl：float: left;
+fr：float: right;
+of: overflow:hidden;
+hide：display: none
+show：display: block;
+box：{width: 1200px;margin: 0px auto;}
+bigbox：{width: 100%;min-width: 1200px;margin: 0px auto;}
+/**************************************************/
+@Styles.Render("~/css/site")//模板里引用
+@RenderSection("styles", required: false)//required: true，页面里必须有
+@section styles{
+    <link rel="stylesheet" type="text/css" href="~/css/huodong.css" />
+}
+
+@Scripts.Render("~/bundles/jquery")//模板里引用
+<script src="~/js/site.js"></script>
+@RenderSection("scripts", required: false)//required: true，页面里必须有
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $(".huodongwarp li:nth-child(2n)").css("margin-right", "0px");
+        })
+    </script>
+}
+@Url.Action("Index", "Huodong",new { t=int.Parse(ConfigKeysVal.HD_Cate_YH_Id)})
+/**************************************************/
+css命名规则
+<style type="text/css">
+.header{}
+.header .nav{}
+.header .nav .menu{}
+			
+.content{}
+.content .nav{}
+.content .nav .menu{}
+			
+.footer{}
+.footer ul{}
+.footer ul li{}
+</style>
+/**************************************************/
+<div id="header"></div>
+<div id="ad"></div> 
+<div id="content"></div> 
+<div id="globalnav"></div> 
+<div id="subnav"></div> 
+<div id="search"></div> 
+<div id="shop"></div> 
+<div id="footer"></div> 
+/**************************************************/
+css文件命名：
+	resrt(重置) layout(头底样式)
+	拼音首2字母缩写
+pic命名：
+	2态_on _off
+        菜单 nav/subnav/globalnav
+	标题 title
+	标志 logo
+	装饰 pic
+	广告 banner
+	
+	模块_类型_2态
+	ad_btn_pic
+	ad_btn_l_on
+	ad_btn_r_off
+	ad_banner_pic0_bg
+	ad_banner_pic1
+	head_nav_pic
+	head_logo
+	foot_logo
+	news_title
+	news_pic0
+	
+合并后图片大小不宜超过50K，建议大小在20K-50K之间。
+结构上如果可以并列书写，就不要嵌套。
+代码精简，嵌套层关系少于三层。
+如果可以写成<div></div><div></div>那么就不要写成<div><div></div></div>
+如果结构已经可以满足视觉和语义的要求，那么就不要有额外的冗余的结构。
+比如<div><h2></h2></div>已经能满足要求，那么就不要再写成<div><div><h2></h2></div></div>
+一个标签上引用的className不要过多，越少越好。
+比如不要出现这种情况：<div class="class1 class2 class3 class4"></div>
+对于一个语义化的内部标签，应尽量避免使用className。
+比如在这样一个列表中，li标签中的itm应去除：<ul class="m-help"><li class="itm"></li><li class="itm"></li></ul>
+
+
+只遵循横向顺序即可，先显示定位布局类属性，后盒模型等自身属性，最后是文本类及修饰类属性。
+
+→	显示属性		自身属性		文本属性和其他修饰
+ 	display		width		font
+ 	visibility	height		text-align
+ 	position	margin		text-decoration
+ 	float		padding		vertical-align
+ 	clear		border		white-space
+ 	list-style	overflow	color
+ 	top		min-width	background
+ 	
+
+
+语义	命名
+导航	nav
+子导航	subnav
+菜单	menu
+选项卡	tab
+内容区	content
+列表	list
+表格	table
+表单	form
+热点	hot
+排行	top
+登录	login
+标志	logo
+广告	ad
+搜索	search
+幻灯	slide
+提示	tips
+帮助	help
+新闻	news
+下载	download
+注册	regist
+投票	vote
+版权	copyright
+结果	result
+标题	title
+按钮	btn
+输入	input
